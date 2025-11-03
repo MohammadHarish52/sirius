@@ -41,7 +41,7 @@ export default function Sidebar({ selectedCategory, onCategoryChange }: SidebarP
       {/* Logo */}
       <div className="p-6 border-b border-gray-200">
         <div className="mb-1">
-          <h1 className="text-2xl font-bold tracking-tight text-(--color-text-primary)" style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '-0.02em' }}>
+          <h1 className="text-2xl font-bold tracking-tight text-(--color-text-primary)" style={{ fontFamily: 'Atkinson Hyperlegible, sans-serif', letterSpacing: '-0.02em' }}>
             Slate
           </h1>
         </div>

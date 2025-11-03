@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&family=Clash+Display:wght@400;500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -58,9 +58,21 @@ body {
   font-family: var(--font-sans);
 }
 
+/* Apply Atkinson Hyperlegible to all headings globally, except those using heading-serif (notes) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-weight: 700;
+}
+
 @utility heading-serif {
   font-family: var(--font-serif);
   font-weight: 600;
+  line-height: 1.3;
+}
+
+@utility heading-hyperlegible {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-weight: 700;
   line-height: 1.3;
 }
 
@@ -76,4 +88,82 @@ body {
   font-size: 0.75rem;
   line-height: 1.4;
   color: var(--text-tertiary);
+}
+
+/* Auth Page Animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  66% {
+    transform: translateY(10px) translateX(-10px);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(15px) translateX(-15px);
+  }
+  66% {
+    transform: translateY(-10px) translateX(10px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+@utility animate-gradient-shift {
+  animation: gradient-shift 15s ease infinite;
+  background-size: 200% 200%;
+}
+
+@utility animate-float {
+  animation: float 20s ease-in-out infinite;
+}
+
+@utility animate-float-delayed {
+  animation: float-delayed 25s ease-in-out infinite;
+}
+
+@utility animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+@utility animate-shake {
+  animation: shake 0.5s ease-in-out;
 }
